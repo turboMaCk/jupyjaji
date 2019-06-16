@@ -1,3 +1,4 @@
+{ nixpkgs ? import <nixpkgs> }:
 let
   config = {
     packageOverrides = pkgs: with pkgs; {
@@ -15,7 +16,7 @@ let
     };
   };
 
-  pkgs = import <nixpkgs> { inherit config; };
+  pkgs = nixpkgs { inherit config; };
 in with pkgs.stdenv;
 mkDerivation rec {
   name = "jupyjaji-${version}";
