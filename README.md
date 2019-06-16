@@ -54,7 +54,7 @@ Say you want to use python `3.6.x` instead of default one for your installation.
 This can be done using `python` argument to build:
 
 ```
-$ nix-build -E "import ./default { python = \"python36\"; }"
+$ nix-build -E "import ./default.nix { python = \"python36\"; }"
 ```
 
 In fact the python string has to correspond to nixpkgs' attribute.
@@ -85,7 +85,7 @@ You can override default packages. Say numpy and pandas is all you really need i
 to jupyter notebook and python kernel, then you can build jupyjaji using
 
 ```
-$ nix-build -E "import ./default { packages = [\"numpy\" \"pandas\"]; }"
+$ nix-build -E "import ./default.nix { packages = [\"numpy\" \"pandas\"]; }"
 ```
 
 Once again those string are attribute names from nixpkgs.
@@ -97,6 +97,6 @@ but it's possible to use pinned version. For instance say you have own pinned ve
 of nixpkgs in `~/nixpkgs`. You can build this project using packages from this definition using:
 
 ```
-$ nix-build -E "import ./default { nixpkgs = import ~/nixpkgs; }"
+$ nix-build -E "import ./default.nix { nixpkgs = import ~/nixpkgs; }"
 ```
 
