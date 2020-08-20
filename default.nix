@@ -7,6 +7,7 @@
   "pandas"
   "sklearn-deap"
   "statsmodels"
+  "psycopg2"
 ]
 }:
 let
